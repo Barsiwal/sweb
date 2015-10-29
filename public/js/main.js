@@ -2,7 +2,18 @@ var graph = Viva.Graph.graph();
 
 var graphics = Viva.Graph.View.svgGraphics(),
     nodeSize = 30;
-
+$.getJSON( "../download/got.json", function( data ) {
+    $.each(data,function(key,val){
+        if(key==="graph"){
+            val.forEach(function(data){
+                if(data.type==="owl:Class")
+                    graph.addNode(data.id,{size:40,color:'r'});
+                else
+                    graph.addNode(data.id,{size:20,color:'g'});
+            });
+        }
+    });
+});
 graph.addNode('thing', {
     size: 60,
     color: 'r'
@@ -11,7 +22,7 @@ graph.addNode('person', {
     size: 40,
     color: 'r'
 });
-graph.addNode('continent', {
+graph.addNode('Continent', {
     size: 40,
     color: 'r'
 });
@@ -19,7 +30,7 @@ graph.addNode('sword', {
     size: 40,
     color: 'r'
 });
-graph.addNode('God', {
+graph.addNode('Gods', {
     size: 40,
     color: 'r'
 });
@@ -83,10 +94,10 @@ graph.addNode('harrenhall', {
     size: 20,
     color: 'g'
 });
-var DireWolfs = ['ghost', 'shaggyDog', 'Lady', 'Nymeria'];
+var DireWolfs = ['Ghost', 'ShaggyDog', 'Lady', 'Nymeria', 'Summer'];
 var People = ['JonSnow', 'AryaStark', 'TyrionLannister', 'DenarysTargaryen'];
 var Houses = ['HouseStark', 'HouseLannister', 'HouseTargaryen'];
-var Gods = ['ManyFacedGod', 'TheRedGod', 'TheGreatWhite', 'TheOldGod'];
+var Gods = ['ManyFacedGods', 'TheRedGods', 'TheGreatWhite', 'TheOldGods'];
 Gods.forEach(function (items) {
     graph.addNode(items, {
         size: 20,
@@ -150,27 +161,27 @@ graph.addNode('Valyria', {
     size: 20,
     color: 'g'
 });
-//////////////////////////////
+////////////////////////////////
 graph.addLink("Nymeria", "AryaStark");
 graph.addLink("LongClaw", "JonSnow");
-graph.addLink("ghost", "JonSnow");
+graph.addLink("Ghost", "JonSnow");
 graph.addLink("drogon", "dragon");
 graph.addLink("drogon", "DenarysTargaryen");
 graph.addLink("HouseTargaryen", "DenarysTargaryen");
 graph.addLink("HouseTargaryen", "Valyria");
 graph.addLink("HouseLannister", "TyrionLannister");
 graph.addLink("ValyrianSteel", "oathKeeper");
-graph.addLink("continent", "Westeros");
-graph.addLink("continent", "Essos");
+graph.addLink("Continent", "Westeros");
+graph.addLink("Continent", "Essos");
 graph.addLink("theNorth", "Westeros");
 graph.addLink("DothrakiSea", "Essos");
 graph.addLink("Valyria", "Essos");
-
-/////////////////////
+//
+///////////////////////
 var WesterosPeople = ['JonSnow', 'AryaStark', 'TyrionLannister', 'HouseStark', 'HouseLannister'];
 var EssosPeople = ['DenarysTargaryen'];
 Gods.forEach(function (items) {
-    graph.addLink('God', items);
+    graph.addLink('Gods', items);
 });
 WesterosPeople.forEach(function (items) {
     graph.addLink('Westeros', items);
@@ -178,9 +189,9 @@ WesterosPeople.forEach(function (items) {
 graph.addLink("Essos", "DenarysTargaryen");
 graph.addLink("Essos", "HouseTargaryen");
 graph.addLink("Essos", "DenarysTargaryen");
-
-/////////////////////////
-var Things = ['person', 'continent', 'sword', 'God', 'Castle', 'Sigil', 'Battle', 'Creature', 'House'];
+//
+///////////////////////////
+var Things = ['person', 'Continent', 'sword', 'Gods', 'Castle', 'Sigil', 'Battle', 'Creature', 'House'];
 var Castles = ['winterfell', 'harrenhall'];
 var Swords = ['ValyrianSteel', 'NormalSword'];
 var Persons = ['WhiteWalkers', 'theChildren', 'Wargs', 'Wildling'];
