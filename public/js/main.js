@@ -6,10 +6,8 @@ $.getJSON( "../download/got.json", function( data ) {
     $.each(data,function(key,val){
         if(key==="graph"){
             val.forEach(function(data){
-                if(data.type==="owl:Class")
+                if(data.type==="owl:Class"&&data.type!="owl:ObjectProperty")
                     graph.addNode(data.id,{size:40,color:'r'});
-                else
-                    graph.addNode(data.id,{size:20,color:'g'});
             });
         }
     });
@@ -95,7 +93,7 @@ graph.addNode('harrenhall', {
     color: 'g'
 });
 var DireWolfs = ['Ghost', 'ShaggyDog', 'Lady', 'Nymeria', 'Summer'];
-var People = ['JonSnow', 'AryaStark', 'TyrionLannister', 'DenarysTargaryen'];
+var People = ['Jon_Snow', 'Arya_Stark', 'Tyrion_Lannister', 'Denarys_Targaryen'];
 var Houses = ['HouseStark', 'HouseLannister', 'HouseTargaryen'];
 var Gods = ['ManyFacedGods', 'TheRedGods', 'TheGreatWhite', 'TheOldGods'];
 Gods.forEach(function (items) {
@@ -123,12 +121,12 @@ People.forEach(function (items) {
     });
 });
 ////////////////////////////////
-var NymOwn = ['AryaStark'];
-var LongClawOwner = ['JonSnow'];
-var GhostOwner = ['JonSnow'];
-var DrogonOwner = ['DenarysTargaryen'];
-var HouseTargaryen = ['DenarysTargaryen'];
-var HouseLannister = ['TyrionLannister'];
+var NymOwn = ['Arya_Stark'];
+var LongClawOwner = ['Jon_Snow'];
+var GhostOwner = ['Jon_Snow'];
+var DrogonOwner = ['Denarys_Targaryen'];
+var HouseTargaryen = ['Denarys_Targaryen'];
+var HouseLannister = ['Tyrion_Lannister'];
 graph.addNode('LongClaw', {
     size: 20,
     color: 'g'
@@ -137,7 +135,7 @@ graph.addNode('oathKeeper', {
     size: 20,
     color: 'g'
 });
-graph.addNode('drogon', {
+graph.addNode('Drogon', {
     size: 20,
     color: 'g'
 });
@@ -162,14 +160,14 @@ graph.addNode('Valyria', {
     color: 'g'
 });
 ////////////////////////////////
-graph.addLink("Nymeria", "AryaStark");
-graph.addLink("LongClaw", "JonSnow");
-graph.addLink("Ghost", "JonSnow");
-graph.addLink("drogon", "dragon");
-graph.addLink("drogon", "DenarysTargaryen");
-graph.addLink("HouseTargaryen", "DenarysTargaryen");
+graph.addLink("Nymeria", "Arya_Stark");
+graph.addLink("LongClaw", "Jon_Snow");
+graph.addLink("Ghost", "Jon_Snow");
+graph.addLink("Drogon", "dragon");
+graph.addLink("Drogon", "Denarys_Targaryen");
+graph.addLink("HouseTargaryen", "Denarys_Targaryen");
 graph.addLink("HouseTargaryen", "Valyria");
-graph.addLink("HouseLannister", "TyrionLannister");
+graph.addLink("HouseLannister", "Tyrion_Lannister");
 graph.addLink("ValyrianSteel", "oathKeeper");
 graph.addLink("Continent", "Westeros");
 graph.addLink("Continent", "Essos");
@@ -178,17 +176,17 @@ graph.addLink("DothrakiSea", "Essos");
 graph.addLink("Valyria", "Essos");
 //
 ///////////////////////
-var WesterosPeople = ['JonSnow', 'AryaStark', 'TyrionLannister', 'HouseStark', 'HouseLannister'];
-var EssosPeople = ['DenarysTargaryen'];
+var WesterosPeople = ['Jon_Snow', 'Arya_Stark', 'Tyrion_Lannister', 'HouseStark', 'HouseLannister'];
+var EssosPeople = ['Denarys_Targaryen'];
 Gods.forEach(function (items) {
     graph.addLink('Gods', items);
 });
 WesterosPeople.forEach(function (items) {
     graph.addLink('Westeros', items);
 });
-graph.addLink("Essos", "DenarysTargaryen");
+graph.addLink("Essos", "Denarys_Targaryen");
 graph.addLink("Essos", "HouseTargaryen");
-graph.addLink("Essos", "DenarysTargaryen");
+graph.addLink("Essos", "Denarys_Targaryen");
 //
 ///////////////////////////
 var Things = ['person', 'Continent', 'sword', 'Gods', 'Castle', 'Sigil', 'Battle', 'Creature', 'House'];
@@ -220,7 +218,7 @@ People.forEach(function (items) {
 Creatures.forEach(function (items) {
     graph.addLink('Creature', items);
 });
-var HouseStark = ['JonSnow', 'AryaStark'];
+var HouseStark = ['Jon_Snow', 'Arya_Stark'];
 HouseStark.forEach(function (items) {
     graph.addLink('HouseStark', items);
 });

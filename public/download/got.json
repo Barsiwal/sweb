@@ -11,23 +11,16 @@
       "type": "owl:Class"
     },
     {
-      "id": "Dragons",
+      "id": "dragon",
       "type": "owl:Class",
       "rdfs:subClassOf": {
         "id": "Creature"
       }
     },
     {
-      "id": "theRedGod",
-      "type": "owl:Class",
-      "rdfs:subClassOf": {
-        "id": "Gods"
-      }
-    },
-    {
-      "id": "HarrenHall",
+      "id": "harrenhall",
       "type": [
-        "Castles",
+        "Castle",
         "owl:NamedIndividual"
       ]
     },
@@ -35,17 +28,17 @@
       "id": "GreyWind",
       "type": [
         "owl:NamedIndividual",
-        "Direwolf"
+        "direwolf"
       ]
     },
     {
       "id": "Sansa_Stark",
       "type": [
-        "Person",
+        "person",
         "owl:NamedIndividual"
       ],
       "belongsToHouse": {
-        "id": "houseStark"
+        "id": "HouseStark"
       },
       "hasCreature": {
         "id": "Lady"
@@ -55,31 +48,13 @@
       }
     },
     {
-      "id": "theFaithOfTheSeven",
-      "type": "owl:Class",
-      "rdfs:subClassOf": {
-        "id": "Gods"
-      }
-    },
-    {
-      "id": "Words",
-      "type": "owl:Class"
-    },
-    {
-      "id": "ManyFacedGod",
-      "type": "owl:Class",
-      "rdfs:subClassOf": {
-        "id": "Gods"
-      }
-    },
-    {
       "id": "Jon_Snow",
       "type": [
         "owl:NamedIndividual",
-        "Person"
+        "person"
       ],
       "belongsToHouse": {
-        "id": "houseStark"
+        "id": "HouseStark"
       },
       "carriesSword": {
         "id": "LongClaw"
@@ -92,10 +67,10 @@
       }
     },
     {
-      "id": "Winterfell",
+      "id": "winterfell",
       "type": [
         "owl:NamedIndividual",
-        "Castles"
+        "Castle"
       ]
     },
     {
@@ -110,7 +85,7 @@
       "id": "Summer",
       "type": [
         "owl:NamedIndividual",
-        "Direwolf"
+        "direwolf"
       ]
     },
     {
@@ -118,31 +93,27 @@
       "type": "owl:ObjectProperty"
     },
     {
-      "id": "Titles",
-      "type": "owl:Class"
-    },
-    {
-      "id": "houseTargaryen",
+      "id": "HouseTargaryen",
       "type": [
         "owl:NamedIndividual",
-        "Houses"
+        "House"
       ],
       "residesIn": {
         "id": "theRedWaste"
       }
     },
     {
-      "id": "houseStark",
+      "id": "HouseStark",
       "type": [
         "owl:NamedIndividual",
-        "Houses"
+        "House"
       ],
       "residesIn": {
         "id": "theNorth"
       }
     },
     {
-      "id": "houseHasPeople",
+      "id": "HouseHasPeople",
       "type": "owl:ObjectProperty",
       "owl:inverseOf": {
         "id": "belongsToHouse"
@@ -156,24 +127,17 @@
       ]
     },
     {
-      "id": "NormalSwords",
+      "id": "NormalSword",
       "type": "owl:Class",
       "rdfs:subClassOf": {
-        "id": "Swords"
+        "id": "sword"
       }
     },
     {
-      "id": "Wildlings",
+      "id": "Wildling",
       "type": "owl:Class",
       "rdfs:subClassOf": {
-        "id": "Person"
-      }
-    },
-    {
-      "id": "theGreatWhite",
-      "type": "owl:Class",
-      "rdfs:subClassOf": {
-        "id": "Gods"
+        "id": "person"
       }
     },
     {
@@ -188,13 +152,13 @@
       ]
     },
     {
-      "id": "houseLannister",
+      "id": "HouseLannister",
       "type": [
-        "Houses",
+        "House",
         "owl:NamedIndividual"
       ],
       "isEnemy": {
-        "id": "houseLannister"
+        "id": "HouseLannister"
       },
       "residesIn": {
         "id": "theSevenKingdoms"
@@ -241,9 +205,9 @@
       "type": "owl:ObjectProperty"
     },
     {
-      "id": "theOathKeeper",
+      "id": "oathKeeper",
       "type": [
-        "ValerianSteelSwords",
+        "ValyrianSteel",
         "owl:NamedIndividual"
       ]
     },
@@ -251,7 +215,7 @@
       "id": "ShaggyDog",
       "type": [
         "owl:NamedIndividual",
-        "Direwolf"
+        "direwolf"
       ]
     },
     {
@@ -276,28 +240,28 @@
       "id": "theChildren",
       "type": "owl:Class",
       "rdfs:subClassOf": {
-        "id": "Person"
+        "id": "person"
       }
     },
     {
       "id": "Tyrion_Lannister",
       "type": [
-        "Person",
+        "person",
         "owl:NamedIndividual"
       ],
       "belongsToHouse": {
-        "id": "houseLannister"
+        "id": "HouseLannister"
       }
     },
     {
-      "id": "Person",
+      "id": "person",
       "type": "owl:Class"
     },
     {
       "id": "WhiteWalkers",
       "type": "owl:Class",
       "rdfs:subClassOf": {
-        "id": "Person"
+        "id": "person"
       }
     },
     {
@@ -305,7 +269,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "theDothrakiSea",
+      "id": "DothrakiSea",
       "type": [
         "Essos",
         "owl:NamedIndividual"
@@ -316,11 +280,11 @@
       "type": "owl:ObjectProperty"
     },
     {
-      "id": "Battles",
+      "id": "Battle",
       "type": "owl:Class"
     },
     {
-      "id": "Houses",
+      "id": "House",
       "type": "owl:Class"
     },
     {
@@ -328,34 +292,34 @@
       "type": "owl:Class"
     },
     {
-      "id": "Direwolf",
+      "id": "direwolf",
       "type": "owl:Class",
       "rdfs:subClassOf": {
         "id": "Creature"
       }
     },
     {
-      "id": "Daenerys_Targaryen",
+      "id": "Denarys_Targaryen",
       "type": [
-        "Person",
+        "person",
         "owl:NamedIndividual"
       ],
       "belongsToHouse": {
-        "id": "houseTargaryen"
+        "id": "HouseTargaryen"
       },
       "hasCreature": {
         "id": "Drogon"
       }
     },
     {
-      "id": "Swords",
+      "id": "sword",
       "type": "owl:Class"
     },
     {
       "id": "Lady",
       "type": [
         "owl:NamedIndividual",
-        "Direwolf"
+        "direwolf"
       ]
     },
     {
@@ -366,27 +330,27 @@
       "id": "Drogon",
       "type": [
         "owl:NamedIndividual",
-        "Dragons"
+        "dragon"
       ]
     },
     {
       "id": "Wargs",
       "type": "owl:Class",
       "rdfs:subClassOf": {
-        "id": "Person"
+        "id": "person"
       }
     },
     {
-      "id": "ValerianSteelSwords",
+      "id": "ValyrianSteel",
       "type": "owl:Class",
       "rdfs:subClassOf": {
-        "id": "Swords"
+        "id": "sword"
       }
     },
     {
       "id": "LongClaw",
       "type": [
-        "ValerianSteelSwords",
+        "ValyrianSteel",
         "owl:NamedIndividual"
       ]
     },
@@ -394,14 +358,14 @@
       "id": "Ghost",
       "type": [
         "owl:NamedIndividual",
-        "Direwolf"
+        "direwolf"
       ]
     },
     {
       "id": "Nymeria",
       "type": [
         "owl:NamedIndividual",
-        "Direwolf"
+        "direwolf"
       ]
     },
     {
@@ -416,7 +380,7 @@
       "type": "owl:ObjectProperty"
     },
     {
-      "id": "Castles",
+      "id": "Castle",
       "type": "owl:Class"
     }
   ]
